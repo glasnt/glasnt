@@ -15,4 +15,23 @@ called `API_TOKEN` against the repo.
 
 Idea and `build.yaml` from [simonw](https://github.com/simonw). 
 
-Avatar art from [manytools.org](https://manytools.org/hacker-tools/convert-images-to-ascii-art/) (for now (TODO))
+Avatar art sources in `asciify.py`.
+
+## Known issues, TODO
+
+**Pinned repo forks are not always accurate**
+
+Popular Repos sources from the top 6 repos from the user based on stars. But this edge type
+has a field called forkCount, which includes (by the looks of it) forks of forks. The pinned 
+repo type only has a `forks { totalCount }`, which is sometimes less than the forkCount
+
+TODO: Add archived badge on archived repos
+
+TODO: add test that at least check if the rendering succeeds 
+
+TODO: possibly add more bio data (optional fields, etc)
+
+
+## TODO
+
+
