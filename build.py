@@ -1,8 +1,7 @@
+from python_graphql_client import GraphqlClient
 import os
-import httpx
 import json
 import textwrap 
-from github import Github
 import emoji
 
 from datetime import datetime
@@ -59,18 +58,19 @@ def table(s, w=40, l="|", r="|", t="_", b="_"):
 def flattable(s, w=40):
     return table(s, w, l="", r="", t="", b="")
 
-
+client = GraphqlClient(endpoint="https://api.github.com/graphql")
 def graphql(query):
-    json = {"query": query} 
-    uri = "https://api.github.com/graphql"
-    headers = {"Authorization": f"bearer {GITHUB_TOKEN}"}
-    r = httpx.post(uri, headers=headers, json=json)
-    return r.text 
+    data = client.execute(
+        query=query,
+        headers={"Authorization": "Bearer {}".format(GITHUB_TOKEN)},
+    )
+    return data
 
-g = Github(GITHUB_TOKEN)
-user = g.get_user()
-USERNAME = user.login
+userq = "{ viewer { login }} "
+userdata = graphql(userq)
+USERNAME = userdata["data"]["viewer"]["login"]
 
+# TODO make dynamic
 # https://manytools.org/hacker-tools/convert-images-to-ascii-art/, width 32
 avatar_art = """
               ...              
@@ -91,6 +91,9 @@ avatar_art = """
 userq = """query
 {
   user(login: "%s") {
+    name
+    login
+    bio
     followers {
       totalCount
     }
@@ -102,20 +105,19 @@ userq = """query
 """ % USERNAME
 
 resp = graphql(userq)
-data = json.loads(resp)["data"]["user"]
+data = resp["data"]["user"]
 followers = data["followers"]["totalCount"]
 starred = data["starredRepositories"]["totalCount"]
 
 avatar = flattable(avatar_art, w=36)
 userblock = avatar +"\n" + flattable(f"""
-{user.name}
-{user.login}
-{short(user.bio, w=36)}
+{data["name"]}
+{data["login"]}
+{short(data["bio"], w=36)}
 ¤ {followers} followers · ✭ {starred} 
 """, w=36)
 
-
-pinnedq = """ query
+pinnedq = """query
 {
   user(login: "%s") {
     pinnedItems(first: 6, types: [REPOSITORY, GIST]) {
@@ -144,8 +146,7 @@ pinnedq = """ query
 }
 """ % USERNAME
 
-resp = graphql(pinnedq)
-data = json.loads(resp)
+data = graphql(pinnedq)
 pinned = []
 for node in data["data"]["user"]["pinnedItems"]["edges"]:
     n = node["node"]
@@ -176,4 +177,5 @@ final = sidebyside(userblock, pinnedblock)
 
 delta = datetime.now() - starttime
 
-print(f"```\n{final}\n```\n<!--- generated in {delta} -->")
+with open("README.md", "w") as f:
+    f.write(f"```\n{final}\n```\n<!--- generated in {delta} -->")
