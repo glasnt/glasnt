@@ -7,20 +7,18 @@ import emoji
 from python_graphql_client import GraphqlClient
 
 
+USERNAME = "glasnt"
+GITHUB_TOKEN = os.environ.get("API_TOKEN", "")
+
+client = GraphqlClient(endpoint="https://api.github.com/graphql")
+
+
 def getnow():
     return datetime.now(timezone.utc)
 
 
-starttime = getnow()
-
-USERNAME = "glasnt"
-
-
 def remove_emoji(text):
     return emoji.get_emoji_regexp().sub("", text)
-
-
-GITHUB_TOKEN = os.environ.get("API_TOKEN", "")
 
 
 def sidebyside(a, b):
@@ -69,15 +67,13 @@ def flattable(s, w=40):
     return table(s, w, l="", r="", t="", b="")
 
 
-client = GraphqlClient(endpoint="https://api.github.com/graphql")
-
-
 def graphql(query):
     data = client.execute(
         query=query, headers={"Authorization": "Bearer {}".format(GITHUB_TOKEN)},
     )
     return data
 
+starttime = getnow()
 
 # TODO make dynamic
 # https://manytools.org/hacker-tools/convert-images-to-ascii-art/, width 32
@@ -191,8 +187,6 @@ for node in data["data"]["user"]["pinnedItems"]["edges"]:
 
     pinned.append(pinned_block)
 
-
-# hacks
 
 pinnedheader = (
     " Pinned                                                     Customize your pins\n"
