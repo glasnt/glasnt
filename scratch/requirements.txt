@@ -1,2 +1,3 @@
 pygithub
 httpx
+emoji
