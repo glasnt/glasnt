@@ -15,7 +15,9 @@ called `API_TOKEN` against the repo.
 
 Idea and `build.yaml` from [simonw](https://github.com/simonw). 
 
-Avatar art sources in `asciify.py`.
+Avatar art generation sources in `asciify.py`.
+
+Affronts to `type(str)` my own. 
 
 ## Known issues, TODO
 
@@ -25,7 +27,11 @@ Popular Repos sources from the top 6 repos from the user based on stars. But thi
 has a field called forkCount, which includes (by the looks of it) forks of forks. The pinned 
 repo type only has a `forks { totalCount }`, which is sometimes less than the forkCount
 
+## TODO
+
 TODO: Add archived badge on archived repos
+
+TODO: if star or fork count is 0, don't display it (matching github)
 
 TODO: add test that at least check if the rendering succeeds 
 
@@ -35,9 +41,5 @@ TODO: more DRY
  
  - bio doesn't do removing of emoji, and removing leading spaces after such changes
  - there's a lot of string manip that is repeatative
-
-
-
-## TODO
 
 
