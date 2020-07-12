@@ -8,12 +8,12 @@ from datetime import datetime
 
 starttime = datetime.now()
 
+USERNAME = "glasnt"
+
 def remove_emoji(text):
     return emoji.get_emoji_regexp().sub(u'', text)
 
-# Automatically provided by GitHub Actions. For local testing, provide your own. 
-# https://docs.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token#about-the-github_token-secret
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
+GITHUB_TOKEN = os.environ.get("API_TOKEN")
 
 def sidebyside(a, b):
     al = a.split("\n")
@@ -67,7 +67,6 @@ def graphql(query):
     print(data)
     return data
 
-USERNAME = "glasnt"
 
 # TODO make dynamic
 # https://manytools.org/hacker-tools/convert-images-to-ascii-art/, width 32
