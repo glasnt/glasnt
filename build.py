@@ -203,4 +203,7 @@ final = sidebyside(userblock, pinnedblock)
 delta = getnow() - starttime
 
 with open("README.md", "w") as f:
-    f.write(f"```\n{final}\n```\n<!--- generated in {delta} at {starttime} -->")
+    f.write(f"```\n{final}\n```\n")
+
+print(final)
+print("<!--- generated in {delta} at {starttime} -->")
