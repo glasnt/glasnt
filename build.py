@@ -29,7 +29,7 @@ def sidebyside(a, b):
         bl = bl + [""] * (len(al) - len(bl))
 
     if len(bl) > len(al):
-        al += [(len(al[0]) - 4) * " "] * (len(bl) - len(al))
+        al += [(len(al[0])) * " "] * (len(bl) - len(al))
 
     if len(al) != len(bl):
         print(f"Blocks must be same height: {len(al)} vs {len(bl)}")
@@ -100,6 +100,7 @@ userq = (
     name
     login
     bio
+    websiteUrl
     followers {
       totalCount
     }
@@ -125,8 +126,11 @@ userblock = (
         f"""
 {data["name"]}
 {data["login"]}
+
 {short(data["bio"], w=36)}
 ¤ {followers} followers · ✭ {starred} 
+
+{data["websiteUrl"]}
 """,
         w=36,
     )
@@ -154,6 +158,7 @@ pinnedq = (
           }
           ... on Gist {
             description
+            files(limit: 1) { text }
           }
         }
       }
@@ -166,38 +171,47 @@ pinnedq = (
 
 data = graphql(pinnedq)
 pinned = []
-for node in data["data"]["user"]["pinnedItems"]["edges"]:
+for i, node in enumerate(data["data"]["user"]["pinnedItems"]["edges"]):
     n = node["node"]
     if "nameWithOwner" in n.keys():
+        # is repo
+        desc = remove_emoji(n["description"]).strip()
+        desc1 = short(desc)
+        desc2 = short(desc[len(desc1):].strip())
         pinned_block = textwrap.dedent(
-            f"""
-        [] {short(n["nameWithOwner"], p='')}
-        {short(remove_emoji(n["description"]).strip())}
-
-        {n["primaryLanguage"]["name"]} ✭ {n["stargazers"]["totalCount"]} ↡ {n["forks"]["totalCount"]}"""
+            f"""[] {short(n["nameWithOwner"], p='')}\n
+            {desc1}\n{desc2}\n\n{n["primaryLanguage"]["name"]} ✭ {n["stargazers"]["totalCount"]} ↡ {n["forks"]["totalCount"]}"""
         )
     else:
-        pinned_block = textwrap.dedent(
-            f"""
-        <> {n["description"]}
+        # is gist
+        text1 = ""
+        text2 = ""
+        if n["files"][0]["text"]:
+            text = n["files"][0]["text"].split("\n")
+            text1 = short(text[0])
+            text2 = short(text[0][len(text1):])
+                
 
+        pinned_block = f"""<> {n["description"]}\n\n{text1}\n{text2}\n\n"""
 
-        """
-        )
-
-    pinned.append(pinned_block)
+    if i >= 2: 
+        pinned.append(table(pinned_block, t=""))
+    else:
+        pinned.append(table(pinned_block))
 
 
 pinnedheader = (
-    " Pinned                                                     Customize your pins\n"
-)
-pinnedblock = (
-    pinnedheader
-    + sidebyside(table(pinned[0]), table(pinned[1]))
-    + sidebyside(table(pinned[2], t=""), table(pinned[3], t=""))
-    + sidebyside(table(pinned[4], t=""), table(pinned[5], t=""))
+    " Pinned                                                                       ✨\n"
 )
 
+
+
+if len(pinned) < 6:
+    pinned += [flattable("")] * (6 - len(pinned))
+
+print(len(pinned))
+
+pinnedblock = pinnedheader + sidebyside(pinned[0], pinned[1]) + sidebyside(pinned[2], pinned[3]) + sidebyside(pinned[4], pinned[5]) 
 final = sidebyside(userblock, pinnedblock)
 
 delta = getnow() - starttime
@@ -206,4 +220,4 @@ with open("README.md", "w") as f:
     f.write(f"```\n{final}\n```\n")
 
 print(final)
-print("<!--- generated in {delta} at {starttime} -->")
+print(f"Generated in {delta} at {starttime}")
