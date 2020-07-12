@@ -67,9 +67,7 @@ def graphql(query):
     print(data)
     return data
 
-userq = "{ viewer { login }} "
-userdata = graphql(userq)
-USERNAME = userdata["data"]["viewer"]["login"]
+USERNAME = "glasnt"
 
 # TODO make dynamic
 # https://manytools.org/hacker-tools/convert-images-to-ascii-art/, width 32
