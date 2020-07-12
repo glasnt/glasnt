@@ -13,7 +13,7 @@ USERNAME = "glasnt"
 def remove_emoji(text):
     return emoji.get_emoji_regexp().sub(u'', text)
 
-GITHUB_TOKEN = os.environ.get("API_TOKEN")
+GITHUB_TOKEN = os.environ.get("API_TOKEN", "")
 
 def sidebyside(a, b):
     al = a.split("\n")
