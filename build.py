@@ -64,6 +64,7 @@ def graphql(query):
         query=query,
         headers={"Authorization": "Bearer {}".format(GITHUB_TOKEN)},
     )
+    print(data)
     return data
 
 userq = "{ viewer { login }} "
