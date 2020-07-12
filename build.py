@@ -2,7 +2,8 @@ import json
 import os
 import textwrap
 from datetime import datetime, timezone
-
+import urllib.request
+from asciify import asciify_runner
 import emoji
 from python_graphql_client import GraphqlClient
 
@@ -13,12 +14,23 @@ GITHUB_TOKEN = os.environ.get("API_TOKEN", "")
 client = GraphqlClient(endpoint="https://api.github.com/graphql")
 
 
+def dedent(s):
+    # textwrap.dedent is too forgiving for this purpose. 
+    res = ""
+    for x in s.split("\n"):
+        res += x.strip() + "\n"
+    return res
+
+
 def getnow():
     return datetime.now(timezone.utc)
 
 
 def remove_emoji(text):
-    return emoji.get_emoji_regexp().sub("", text)
+    if text:
+        return emoji.get_emoji_regexp().sub("", text)
+    else:
+        return ""
 
 
 def sidebyside(a, b):
@@ -42,6 +54,8 @@ def sidebyside(a, b):
 
 
 def short(n, w=32, p=""):
+    if not n:
+       return ""
     return textwrap.shorten(n, width=w, placeholder=p)
 
 
@@ -75,24 +89,6 @@ def graphql(query):
 
 starttime = getnow()
 
-# TODO make dynamic
-# https://manytools.org/hacker-tools/convert-images-to-ascii-art/, width 32
-avatar_art = """
-              ...              
-           .,,//. ..,(%@&       
-           (     . ...*%%&%(    
-                 .*(....,&#*,,  
-           ..,../#&&%&&*,*.*.** 
-  .       , .,*,/....#,,**,,//**
-.           ., ,*(**,,,,**&%(/**
- .     .  ...../...(...,//(*&&/*
-     . .###%&%&(.....,*//*,,#&&&
-  .. .(%%%%%%%&%..**.,,,....&&& 
-   . #%&%&%&&%&&&..,.......&&&  
-     #&&%&&%&%&&&&%......&&#    
-        (&&%%&&&&&&&&&&&
-"""
-
 userq = (
     """query
 {
@@ -101,6 +97,7 @@ userq = (
     login
     bio
     websiteUrl
+    avatarUrl
     followers {
       totalCount
     }
@@ -118,7 +115,14 @@ data = resp["data"]["user"]
 followers = data["followers"]["totalCount"]
 starred = data["starredRepositories"]["totalCount"]
 
-avatar = flattable(avatar_art, w=36)
+avatarUrl = data["avatarUrl"]
+avatar_fn = f'{USERNAME}.png'
+urllib.request.urlretrieve(avatarUrl, avatar_fn)
+
+avatar = asciify_runner(avatar_fn, width=30)
+avatar = flattable(avatar, w=36)
+
+bio = "\n".join(textwrap.wrap(data["bio"], width=36))
 userblock = (
     avatar
     + "\n"
@@ -127,7 +131,8 @@ userblock = (
 {data["name"]}
 {data["login"]}
 
-{short(data["bio"], w=36)}
+{bio}
+
 ¤ {followers} followers · ✭ {starred} 
 
 {data["websiteUrl"]}
@@ -145,16 +150,15 @@ pinnedq = (
       edges {
         node {
           ... on Repository {
-            nameWithOwner, description
+            nameWithOwner
+            description
             primaryLanguage {
               name
             }
             stargazers {
               totalCount
             }
-            forks {
-              totalCount
-            }
+            forks { totalCount } 
           }
           ... on Gist {
             description
@@ -169,18 +173,67 @@ pinnedq = (
     % USERNAME
 )
 
+popularq = """
+{
+  user(login: "%s") {
+    repositories(first: 6, orderBy: {field: STARGAZERS, direction: DESC}, ownerAffiliations: OWNER) {
+      edges {
+        node {
+          ... on Repository {
+            nameWithOwner
+            name
+            description
+            primaryLanguage {
+              name
+            }
+            stargazers {
+              totalCount
+            }
+            forkCount
+          }
+        }
+      }
+    }
+  }
+}
+
+""" % USERNAME
+
+
 data = graphql(pinnedq)
+nodes = data["data"]["user"]["pinnedItems"]["edges"]
+header = "Pinned"
+
+# GitHub defaults to most popular self repos if there are no pinned
+if data["data"]["user"]["pinnedItems"]["totalCount"] == 0: 
+    data = graphql(popularq)
+    nodes = data["data"]["user"]["repositories"]["edges"]
+    header = "Popular repositories"
+
+
 pinned = []
-for i, node in enumerate(data["data"]["user"]["pinnedItems"]["edges"]):
+for i, node in enumerate(nodes):
     n = node["node"]
     if "nameWithOwner" in n.keys():
         # is repo
         desc = remove_emoji(n["description"]).strip()
         desc1 = short(desc)
         desc2 = short(desc[len(desc1):].strip())
-        pinned_block = textwrap.dedent(
-            f"""[] {short(n["nameWithOwner"], p='')}\n
-            {desc1}\n{desc2}\n\n{n["primaryLanguage"]["name"]} ✭ {n["stargazers"]["totalCount"]} ↡ {n["forks"]["totalCount"]}"""
+
+        if header == "Pinned":
+            name = short(n["nameWithOwner"], p='') # Popular assumes current user
+            forks = n["forks"]["totalCount"]
+        else: 
+            name = short(n["name"], p='')
+            forks = n["forkCount"] # This doesn't appear in the pinned edge
+        pinned_block = dedent(
+            f"""
+            [] {name}
+
+            {desc1}
+            {desc2}
+
+            {n["primaryLanguage"]["name"]} ✭ {n["stargazers"]["totalCount"]} ↡ {forks}"""
         )
     else:
         # is gist
@@ -192,7 +245,13 @@ for i, node in enumerate(data["data"]["user"]["pinnedItems"]["edges"]):
             text2 = short(text[0][len(text1):])
                 
 
-        pinned_block = f"""<> {n["description"]}\n\n{text1}\n{text2}\n\n"""
+        pinned_block = dedent(f"""
+            <> {n["description"]}
+
+            {text1}
+            {text2}
+
+            """)
 
     if i >= 2: 
         pinned.append(table(pinned_block, t=""))
@@ -200,18 +259,12 @@ for i, node in enumerate(data["data"]["user"]["pinnedItems"]["edges"]):
         pinned.append(table(pinned_block))
 
 
-pinnedheader = (
-    " Pinned                                                                       ✨\n"
-)
-
-
-
 if len(pinned) < 6:
     pinned += [flattable("")] * (6 - len(pinned))
 
-print(len(pinned))
+header = " " + header.ljust(77) + "✨\n" 
 
-pinnedblock = pinnedheader + sidebyside(pinned[0], pinned[1]) + sidebyside(pinned[2], pinned[3]) + sidebyside(pinned[4], pinned[5]) 
+pinnedblock = header + sidebyside(pinned[0], pinned[1]) + sidebyside(pinned[2], pinned[3]) + sidebyside(pinned[4], pinned[5]) 
 final = sidebyside(userblock, pinnedblock)
 
 delta = getnow() - starttime
