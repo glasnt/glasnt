@@ -219,5 +219,4 @@ delta = getnow() - starttime
 with open("README.md", "w") as f:
     f.write(f"```\n{final}\n```\n")
 
-print(final)
 print(f"Generated in {delta} at {starttime}")
