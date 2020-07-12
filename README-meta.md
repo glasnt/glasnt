@@ -31,6 +31,12 @@ TODO: add test that at least check if the rendering succeeds
 
 TODO: possibly add more bio data (optional fields, etc)
 
+TODO: more DRY
+ 
+ - bio doesn't do removing of emoji, and removing leading spaces after such changes
+ - there's a lot of string manip that is repeatative
+
+
 
 ## TODO
 
