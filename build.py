@@ -4,9 +4,12 @@ import json
 import textwrap 
 import emoji
 
-from datetime import datetime
+from datetime import datetime, timezone
 
-starttime = datetime.now()
+def getnow():
+    return datetime.now(timezone.utc)
+
+starttime = getnow()
 
 USERNAME = "glasnt"
 
@@ -64,7 +67,6 @@ def graphql(query):
         query=query,
         headers={"Authorization": "Bearer {}".format(GITHUB_TOKEN)},
     )
-    print(data)
     return data
 
 
@@ -173,7 +175,7 @@ pinnedblock = (pinnedheader + sidebyside(table(pinned[0]), table(pinned[1])) +
 
 final = sidebyside(userblock, pinnedblock)
 
-delta = datetime.now() - starttime
+delta = getnow() - starttime
 
 with open("README.md", "w") as f:
-    f.write(f"```\n{final}\n```\n<!--- generated in {delta} -->")
+    f.write(f"```\n{final}\n```\n<!--- generated in {delta} at {starttime} -->")
