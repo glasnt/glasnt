@@ -16,7 +16,7 @@
         ######@@@@@@@@              | Examples of Python web servers       || Examples of Ruby web servers as      |
                                     | as Cloud Run services                || Cloud Run services.                  |
  Katie McLaughlin                   |                                      ||                                      |
- glasnt                             | Python ✭ 0 ↡ 0                       || Ruby ✭ 0 ↡ 0                         |
+ glasnt                             | Python ✭ 0 ↡ 0                       || Ruby ✭ 1 ↡ 0                         |
                                     |                                      ||                                      |
  Developer Advocate @google | Core  |______________________________________||______________________________________|
  Organiser @devopsdays              |                                      ||                                      |
@@ -25,7 +25,7 @@
                                     | Serverless Django on Google          || The whys to the wats                 |
  https://glasnt.com                 | Cloud                                ||                                      |
                                     |                                      ||                                      |
-                                    | Python ✭ 37 ↡ 8                      || Shell ✭ 8 ↡ 1                        |
+                                    | Python ✭ 37 ↡ 8                      || Shell ✭ 9 ↡ 1                        |
                                     |                                      ||                                      |
                                     |______________________________________||______________________________________|
                                     
