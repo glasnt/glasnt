@@ -21,11 +21,11 @@
  Developer Advocate @google | Core  |______________________________________||______________________________________|
  Organiser @devopsdays              |                                      ||                                      |
                                     | [] GoogleCloudPlatform/django-demo-  || [] glasnt/wat-references             |
- ¤ 305 followers · ✭ 73             |                                      ||                                      |
+ ¤ 304 followers · ✭ 73             |                                      ||                                      |
                                     | Serverless Django on Google          || The whys to the wats                 |
  https://glasnt.com                 | Cloud                                ||                                      |
                                     |                                      ||                                      |
-                                    | Python ✭ 43 ↡ 9                      || Shell ✭ 9 ↡ 1                        |
+                                    | Python ✭ 43 ↡ 8                      || Shell ✭ 9 ↡ 1                        |
                                     |                                      ||                                      |
                                     |______________________________________||______________________________________|
                                     
