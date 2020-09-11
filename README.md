@@ -25,7 +25,7 @@
                                     | Serverless Django on Google          || The whys to the wats                 |
  https://glasnt.com                 | Cloud                                ||                                      |
                                     |                                      ||                                      |
-                                    | Python ✭ 45 ↡ 8                      || Shell ✭ 9 ↡ 1                        |
+                                    | Python ✭ 46 ↡ 8                      || Shell ✭ 9 ↡ 1                        |
                                     |                                      ||                                      |
                                     |______________________________________||______________________________________|
                                     
