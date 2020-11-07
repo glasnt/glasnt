@@ -11,21 +11,21 @@
  ,,,,,,+*?S##@#+::::;+*++;:%@@@     |                                      ||                                      |
  .,.,:?S######@?,:::;;;::::S@@#     |______________________________________||______________________________________|
   ,,,*S#########+:::::::,:?@@@      |                                      ||                                      |
-    *%S#######@##%;:,,::+S@@        | [] glasnt/cloudrun-python-examples   || [] glasnt/cloudrun-ruby-examples     |
+    *%S#######@##%;:,,::+S@@        | [] glasnt/wat-references             || [] django/django                     |
      #########@#@@#?*??S@@@         |                                      ||                                      |
-        #@####@@@@@@@@              | Examples of Python web servers       || Examples of Ruby web servers as      |
-                                    | as Cloud Run services                || Cloud Run services.                  |
+        #@####@@@@@@@@              | The whys to the wats                 || The Web framework for                |
+                                    |                                      || perfectionists with deadlines.       |
  Katie McLaughlin                   |                                      ||                                      |
- glasnt                             | Python ✭ 0 ↡ 0                       || Ruby ✭ 1 ↡ 0                         |
+ glasnt                             | Shell ✭ 9 ↡ 1                        || Python ✭ 53374 ↡ 22416               |
                                     |                                      ||                                      |
  Developer Advocate @google | Core  |______________________________________||______________________________________|
  Organiser @devopsdays              |                                      ||                                      |
-                                    | [] GoogleCloudPlatform/django-demo-  || [] glasnt/wat-references             |
+                                    | [] glasnt/emojificate                || [] glasnt/gday-cloud-run             |
  ¤ 328 followers · ✭ 74             |                                      ||                                      |
-                                    | Serverless Django on Google          || The whys to the wats                 |
- https://glasnt.com                 | Cloud                                ||                                      |
+                                    | Turn text with emoji into text       || Australian-friendly Hello Cloud      |
+ https://glasnt.com                 | with accessible emoji                || Run                                  |
                                     |                                      ||                                      |
-                                    | Python ✭ 51 ↡ 11                     || Shell ✭ 9 ↡ 1                        |
+                                    | Python ✭ 35 ↡ 5                      || HTML ✭ 0 ↡ 0                         |
                                     |                                      ||                                      |
                                     |______________________________________||______________________________________|
                                     
