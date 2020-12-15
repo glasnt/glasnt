@@ -16,7 +16,7 @@
         #@####@@@@@@@@              | The whys to the wats                 || The Web framework for                |
                                     |                                      || perfectionists with deadlines.       |
  Katie McLaughlin                   |                                      ||                                      |
- glasnt                             | Shell ✭ 9 ↡ 1                        || Python ✭ 54185 ↡ 22730               |
+ glasnt                             | Shell ✭ 9 ↡ 1                        || Python ✭ 54184 ↡ 22730               |
                                     |                                      ||                                      |
  Developer Advocate @google | Core  |______________________________________||______________________________________|
  Organiser @devopsdays              |                                      ||                                      |
