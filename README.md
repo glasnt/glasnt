@@ -21,7 +21,7 @@
  Developer Advocate @google | Core  |______________________________________||______________________________________|
  Organiser @devopsdays              |                                      ||                                      |
                                     | [] glasnt/emojificate                || [] glasnt/gday-cloud-run             |
- ¤ 358 followers · ✭ 74             |                                      ||                                      |
+ ¤ 359 followers · ✭ 74             |                                      ||                                      |
                                     | Turn text with emoji into text       || Australian-friendly Hello Cloud      |
  https://glasnt.com                 | with accessible emoji                || Run                                  |
                                     |                                      ||                                      |
