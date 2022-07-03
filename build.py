@@ -15,7 +15,7 @@ client = GraphqlClient(endpoint="https://api.github.com/graphql")
 
 
 def dedent(s):
-    # textwrap.dedent is too forgiving for this purpose. 
+    # textwrap.dedent is too forgiving for this purpose.
     res = ""
     for x in s.split("\n"):
         res += x.strip() + "\n"
@@ -55,7 +55,7 @@ def sidebyside(a, b):
 
 def short(n, w=32, p=""):
     if not n:
-       return ""
+        return ""
     return textwrap.shorten(n, width=w, placeholder=p)
 
 
@@ -83,9 +83,11 @@ def flattable(s, w=40):
 
 def graphql(query):
     data = client.execute(
-        query=query, headers={"Authorization": "Bearer {}".format(GITHUB_TOKEN)},
+        query=query,
+        headers={"Authorization": "Bearer {}".format(GITHUB_TOKEN)},
     )
     return data
+
 
 starttime = getnow()
 
@@ -116,7 +118,7 @@ followers = data["followers"]["totalCount"]
 starred = data["starredRepositories"]["totalCount"]
 
 avatarUrl = data["avatarUrl"]
-avatar_fn = f'{USERNAME}.png'
+avatar_fn = f"{USERNAME}.png"
 urllib.request.urlretrieve(avatarUrl, avatar_fn)
 
 avatar = asciify_runner(avatar_fn, width=30)
@@ -173,7 +175,8 @@ pinnedq = (
     % USERNAME
 )
 
-popularq = """
+popularq = (
+    """
 {
   user(login: "%s") {
     repositories(first: 6, orderBy: {field: STARGAZERS, direction: DESC}, ownerAffiliations: OWNER) {
@@ -197,7 +200,9 @@ popularq = """
   }
 }
 
-""" % USERNAME
+"""
+    % USERNAME
+)
 
 
 data = graphql(pinnedq)
@@ -205,7 +210,7 @@ nodes = data["data"]["user"]["pinnedItems"]["edges"]
 header = "Pinned"
 
 # GitHub defaults to most popular self repos if there are no pinned
-if data["data"]["user"]["pinnedItems"]["totalCount"] == 0: 
+if data["data"]["user"]["pinnedItems"]["totalCount"] == 0:
     data = graphql(popularq)
     nodes = data["data"]["user"]["repositories"]["edges"]
     header = "Popular repositories"
@@ -257,18 +262,19 @@ for i, node in enumerate(nodes):
         if n["files"][0]["text"]:
             text = n["files"][0]["text"].split("\n")
             text1 = short(text[0])
-            text2 = short(text[0][len(text1):])
-                
+            text2 = short(text[0][len(text1) :])
 
-        pinned_block = dedent(f"""
+        pinned_block = dedent(
+            f"""
             <> {n["description"]}
 
             {text1}
             {text2}
 
-            """)
+            """
+        )
 
-    if i >= 2: 
+    if i >= 2:
         pinned.append(table(pinned_block, t=""))
     else:
         pinned.append(table(pinned_block))
@@ -277,9 +283,14 @@ for i, node in enumerate(nodes):
 if len(pinned) < 6:
     pinned += [flattable("")] * (6 - len(pinned))
 
-header = " " + header.ljust(77) + "✨\n" 
+header = " " + header.ljust(77) + "✨\n"
 
-pinnedblock = header + sidebyside(pinned[0], pinned[1]) + sidebyside(pinned[2], pinned[3]) + sidebyside(pinned[4], pinned[5]) 
+pinnedblock = (
+    header
+    + sidebyside(pinned[0], pinned[1])
+    + sidebyside(pinned[2], pinned[3])
+    + sidebyside(pinned[4], pinned[5])
+)
 final = sidebyside(userblock, pinnedblock)
 
 delta = getnow() - starttime
