@@ -218,14 +218,29 @@ for i, node in enumerate(nodes):
         # is repo
         desc = remove_emoji(n["description"]).strip()
         desc1 = short(desc)
-        desc2 = short(desc[len(desc1):].strip())
+        desc2 = short(desc[len(desc1) :].strip())
 
         if header == "Pinned":
-            name = short(n["nameWithOwner"], p='') # Popular assumes current user
-            forks = n["forks"]["totalCount"]
-        else: 
-            name = short(n["name"], p='')
-            forks = n["forkCount"] # This doesn't appear in the pinned edge
+            name = short(n["nameWithOwner"], p="")  # Popular assumes current user
+            fork_count = n["forks"]["totalCount"]
+        else:
+            name = short(n["name"], p="")
+            fork_count = n["forkCount"]  # This doesn't appear in the pinned edge
+
+        # Only display language if valid
+        language = ""
+        if n["primaryLanguage"]:
+            language = n["primaryLanguage"]["name"]
+
+        # Only display stars if there are stars
+        stars = ""
+        if n["stargazers"]["totalCount"] > 0:
+            stars = f'✭ {n["stargazers"]["totalCount"]}'
+
+        forks = ""
+        if fork_count > 0:
+            forks = f"↡ {fork_count}"
+
         pinned_block = dedent(
             f"""
             [] {name}
@@ -233,7 +248,7 @@ for i, node in enumerate(nodes):
             {desc1}
             {desc2}
 
-            {n["primaryLanguage"]["name"]} ✭ {n["stargazers"]["totalCount"]} ↡ {forks}"""
+            {language} {stars} {forks}"""
         )
     else:
         # is gist
