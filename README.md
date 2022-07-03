@@ -16,17 +16,17 @@
         %SSS?*?##%**%S              | The whys to the wats                 || The Web framework for                |
                                     |                                      || perfectionists with deadlines.       |
  Katie McLaughlin                   |                                      ||                                      |
- glasnt                             | Shell ✭ 10 ↡ 1                       || Python ✭ 64908 ↡ 26519               |
+ glasnt                             | Shell ✭ 10 ↡ 1                       || Python ✭ 64910 ↡ 26521               |
                                     |                                      ||                                      |
  Enginerd @google                   |______________________________________||______________________________________|
- @GoogleCloudPlatform |   Core      |                                      ||                                      |
- @devopsdays |  Steering @pyconau   | [] glasnt/emojificate                || [] glasnt/gday-cloud-run             |
-                                    |                                      ||                                      |
- ¤ 469 followers · ✭ 78             | Turn text with emoji into text       || Australian-friendly Hello Cloud      |
-                                    | with accessible emoji                || Run                                  |
- https://glasnt.com                 |                                      ||                                      |
-                                    | Python ✭ 45 ↡ 6                      || HTML ✭ 0 ↡ 0                         |
-                                    |                                      ||                                      |
-                                    |______________________________________||______________________________________|
+ @GoogleCloudPlatform |   Core      |                                      |                                        
+ @devopsdays |  Steering @pyconau   | [] glasnt/emojificate                |
+                                    |                                      |
+ ¤ 469 followers · ✭ 78             | Turn text with emoji into text       |
+                                    | with accessible emoji                |
+ https://glasnt.com                 |                                      |
+                                    | Python ✭ 45 ↡ 6                      |
+                                    |                                      |
+                                    |______________________________________|
                                     
 ```
