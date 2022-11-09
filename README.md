@@ -7,7 +7,7 @@
  ?:,,,;# %;+#?,,,,?@+:+ #+,,,,,     | A very persuasive package, for       ||                                      |
  *;,,,:# %::;::;;::;::? @;,,::,     | creating embroidery patterns.        ||                                      |
  *;,:,,*@ ;;+::,,::+;;@ ?,,:::,     |                                      ||                                      |
- :::::,,%@S+::::::::;S@#:,::::,     | Python ✭ 61 ↡ 7                      ||                                      |
+ :::::,,%@S+::::::::;S@#:,::::,     | Python ✭ 62 ↡ 7                      ||                                      |
  :,:::,,%##@S;;::;;*@@##?,,::::     |                                      ||                                      |
  ::,:::*###@#?;;;;:+ @##@?;:::;     |______________________________________||______________________________________|
   :::;%@@#%S*;,,,,:+SS##@@?::;      |                                      ||                                      |
@@ -16,13 +16,13 @@
         %SSS?*?##%**%S              | The whys to the wats                 || The Web framework for                |
                                     |                                      || perfectionists with deadlines.       |
  Katie McLaughlin                   |                                      ||                                      |
- glasnt                             | Shell ✭ 10 ↡ 1                       || Python ✭ 67204 ↡ 27287               |
+ glasnt                             | Shell ✭ 10 ↡ 1                       || Python ✭ 67209 ↡ 27286               |
                                     |                                      ||                                      |
  Enginerd @google                   |______________________________________||______________________________________|
  @GoogleCloudPlatform | Core        |                                      ||                                      |
  @devopsdays | Steering @pyconau    | [] glasnt/emojificate                || [] glasnt/gday-cloud-run             |
                                     |                                      ||                                      |
- ¤ 501 followers · ✭ 78             | Turn text with emoji into text       || Australian-friendly Hello Cloud      |
+ ¤ 502 followers · ✭ 78             | Turn text with emoji into text       || Australian-friendly Hello Cloud      |
                                     | with accessible emoji                || Run                                  |
  https://glasnt.com                 |                                      ||                                      |
                                     | Python ✭ 61 ↡ 7                      || HTML                                 |
