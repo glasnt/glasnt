@@ -293,13 +293,9 @@ pinnedblock = (
 )
 final = sidebyside(userblock, pinnedblock)
 
-# WIP: Mastodon Verification
-mastovalidate = '<a rel="me" href="https://cloudisland.nz/@glasnt">🐘</a>'
-
 delta = getnow() - starttime
 
 with open("README.md", "w") as f:
     f.write(f"```\n{final}\n```\n")
-    f.write("\n" + mastovalidate)
 
 print(f"Generated in {delta} at {starttime}")
