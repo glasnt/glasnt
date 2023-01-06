@@ -16,16 +16,16 @@
         %SSS?*?##%**%S              | The whys to the wats                 || The Web framework for                |
                                     |                                      || perfectionists with deadlines.       |
  Katie McLaughlin                   |                                      ||                                      |
- glasnt                             | Shell ✭ 10 ↡ 1                       || Python ✭ 67998 ↡ 27533               |
+ glasnt                             | Shell ✭ 10 ↡ 1                       || Python ✭ 67998 ↡ 27535               |
                                     |                                      ||                                      |
  Enginerd @google                   |______________________________________||______________________________________|
  @GoogleCloudPlatform | Core        |                                      ||                                      |
- @devopsdays | Steering @pyconau    | [] glasnt/emojificate                || [] glasnt/gday-cloud-run             |
+ @devopsdays | Steering @pyconau |  | [] glasnt/emojificate                || [] glasnt/gday-cloud-run             |
+ Board @django | she/they           |                                      ||                                      |
+                                    | Turn text with emoji into text       || Australian-friendly Hello Cloud      |
+ ¤ 511 followers · ✭ 78             | with accessible emoji                || Run                                  |
                                     |                                      ||                                      |
- ¤ 509 followers · ✭ 78             | Turn text with emoji into text       || Australian-friendly Hello Cloud      |
-                                    | with accessible emoji                || Run                                  |
- https://cloudisland.nz/@glasnt     |                                      ||                                      |
-                                    | Python ✭ 61 ↡ 6                      || HTML                                 |
+ https://cloudisland.nz/@glasnt     | Python ✭ 61 ↡ 6                      || HTML                                 |
                                     |                                      ||                                      |
                                     |______________________________________||______________________________________|
                                     
