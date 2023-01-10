@@ -7,7 +7,7 @@
  ?:,,,;# %;+#?,,,,?@+:+ #+,,,,,     | A very persuasive package, for       ||                                      |
  *;,,,:# %::;::;;::;::? @;,,::,     | creating embroidery patterns.        ||                                      |
  *;,:,,*@ ;;+::,,::+;;@ ?,,:::,     |                                      ||                                      |
- :::::,,%@S+::::::::;S@#:,::::,     | Python ✭ 63 ↡ 7                      ||                                      |
+ :::::,,%@S+::::::::;S@#:,::::,     | Python ✭ 63 ↡ 6                      ||                                      |
  :,:::,,%##@S;;::;;*@@##?,,::::     |                                      ||                                      |
  ::,:::*###@#?;;;;:+ @##@?;:::;     |______________________________________||______________________________________|
   :::;%@@#%S*;,,,,:+SS##@@?::;      |                                      ||                                      |
@@ -16,7 +16,7 @@
         %SSS?*?##%**%S              | The whys to the wats                 || The Web framework for                |
                                     |                                      || perfectionists with deadlines.       |
  Katie McLaughlin                   |                                      ||                                      |
- glasnt                             | Shell ✭ 10 ↡ 1                       || Python ✭ 68055 ↡ 27543               |
+ glasnt                             | Shell ✭ 10 ↡ 1                       || Python ✭ 68061 ↡ 27543               |
                                     |                                      ||                                      |
  Enginerd @google                   |______________________________________||______________________________________|
  @GoogleCloudPlatform | Core        |                                      ||                                      |
@@ -25,7 +25,7 @@
                                     | Turn text with emoji into text       || Australian-friendly Hello Cloud      |
  ¤ 512 followers · ✭ 78             | with accessible emoji                || Run                                  |
                                     |                                      ||                                      |
- https://cloudisland.nz/@glasnt     | Python ✭ 61 ↡ 6                      || HTML                                 |
+ https://cloudisland.nz/@glasnt     | Python ✭ 61 ↡ 7                      || HTML                                 |
                                     |                                      ||                                      |
                                     |______________________________________||______________________________________|
                                     
