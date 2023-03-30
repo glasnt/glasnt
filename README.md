@@ -7,7 +7,7 @@
  ?:,,,;# %;+#?,,,,?@+:+ #+,,,,,     | A very persuasive package, for       ||                                      |
  *;,,,:# %::;::;;::;::? @;,,::,     | creating embroidery patterns.        ||                                      |
  *;,:,,*@ ;;+::,,::+;;@ ?,,:::,     |                                      ||                                      |
- :::::,,%@S+::::::::;S@#:,::::,     | Python ✭ 64 ↡ 6                      ||                                      |
+ :::::,,%@S+::::::::;S@#:,::::,     | Python ✭ 65 ↡ 6                      ||                                      |
  :,:::,,%##@S;;::;;*@@##?,,::::     |                                      ||                                      |
  ::,:::*###@#?;;;;:+ @##@?;:::;     |______________________________________||______________________________________|
   :::;%@@#%S*;,,,,:+SS##@@?::;      |                                      ||                                      |
@@ -16,14 +16,14 @@
         %SSS?*?##%**%S              | The whys to the wats                 || The Web framework for                |
                                     |                                      || perfectionists with deadlines.       |
  Katie McLaughlin                   |                                      ||                                      |
- glasnt                             | Shell ✭ 10 ↡ 1                       || Python ✭ 69558 ↡ 28026               |
+ glasnt                             | Shell ✭ 10 ↡ 1                       || Python ✭ 69560 ↡ 28028               |
                                     |                                      ||                                      |
  Enginerd @google                   |______________________________________||______________________________________|
  @GoogleCloudPlatform | Core        |                                      ||                                      |
  @devopsdays | Steering @pyconau |  | [] glasnt/emojificate                || [] glasnt/gday-cloud-run             |
  Board @django | they/she           |                                      ||                                      |
                                     | Turn text with emoji into text       || Australian-friendly Hello Cloud      |
- ¤ 525 followers · ✭ 78             | with accessible emoji                || Run                                  |
+ ¤ 526 followers · ✭ 78             | with accessible emoji                || Run                                  |
                                     |                                      ||                                      |
  https://glasnt.com                 | Python ✭ 62 ↡ 8                      || HTML                                 |
                                     |                                      ||                                      |
