@@ -28,7 +28,7 @@ def getnow():
 
 def remove_emoji(text):
     if text:
-        return emoji.get_emoji_regexp().sub("", text)
+        return emoji.replace_emoji(text, replace="")
     else:
         return ""
 
