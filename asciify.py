@@ -35,7 +35,7 @@ def mask(image):
     mask = Image.new('L', bigsize, 0)
     draw = ImageDraw.Draw(mask)
     draw.ellipse((0, 0) + bigsize, fill=255)
-    mask = mask.resize(image.size, Image.ANTIALIAS)
+    mask = mask.resize(image.size, Image.LANCZOS)
     image.putalpha(mask)
     return image
 
