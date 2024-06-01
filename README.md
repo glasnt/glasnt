@@ -16,7 +16,7 @@
         %SSS?*?##%**%S              | The whys to the wats                 || The Web framework for                |
                                     |                                      || perfectionists with deadlines.       |
  Katie McLaughlin                   |                                      ||                                      |
- glasnt                             | Shell ✭ 12 ↡ 1                       || Python ✭ 77318 ↡ 30424               |
+ glasnt                             | Shell ✭ 12 ↡ 1                       || Python ✭ 77336 ↡ 30427               |
                                     |                                      ||                                      |
  Enginerd @GoogleCloudPlatform |    |______________________________________||______________________________________|
  @devopsdays | Steering @pyconau |  |                                      ||                                      |
