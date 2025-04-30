@@ -16,7 +16,7 @@
         %SSS?*?##%**%S              | The whys to the wats                 || The Web framework for                |
                                     |                                      || perfectionists with deadlines.       |
  Katie McLaughlin                   |                                      ||                                      |
- glasnt                             | Shell ✭ 17 ↡ 1                       || Python ✭ 83352 ↡ 31886               |
+ glasnt                             | Shell ✭ 17 ↡ 1                       || Python ✭ 83362 ↡ 31891               |
                                     |                                      ||                                      |
  Enginerd @GoogleCloudPlatform |    |______________________________________||______________________________________|
  @devopsdays | Steering @pyconau |  |                                      ||                                      |
@@ -24,7 +24,7 @@
  @glasnt-bot |   Test account       |                                      ||                                      |
  @glasnt-dev                        | Turn text with emoji into text       || Australian-friendly Hello Cloud      |
                                     | with accessible emoji                || Run                                  |
- ¤ 628 followers · ✭ 77             |                                      ||                                      |
+ ¤ 627 followers · ✭ 77             |                                      ||                                      |
                                     | Python ✭ 65 ↡ 8                      || HTML ✭ 1                             |
  https://glasnt.com                 |                                      ||                                      |
                                     |______________________________________||______________________________________|
