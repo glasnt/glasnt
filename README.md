@@ -7,7 +7,7 @@
  ?:,,,;# %;+#?,,,,?@+:+ #+,,,,,     | A very persuasive package, for       ||                                      |
  *;,,,:# %::;::;;::;::? @;,,::,     | creating embroidery patterns.        ||                                      |
  *;,:,,*@ ;;+::,,::+;;@ ?,,:::,     |                                      ||                                      |
- :::::,,%@S+::::::::;S@#:,::::,     | Python ✭ 114 ↡ 9                     ||                                      |
+ :::::,,%@S+::::::::;S@#:,::::,     | Python ✭ 114 ↡ 10                    ||                                      |
  :,:::,,%##@S;;::;;*@@##?,,::::     |                                      ||                                      |
  ::,:::*###@#?;;;;:+ @##@?;:::;     |______________________________________||______________________________________|
   :::;%@@#%S*;,,,,:+SS##@@?::;      |                                      ||                                      |
@@ -16,7 +16,7 @@
         %SSS?*?##%**%S              | The whys to the wats                 || The Web framework for                |
                                     |                                      || perfectionists with deadlines.       |
  Katie McLaughlin                   |                                      ||                                      |
- glasnt                             | Shell ✭ 17 ↡ 1                       || Python ✭ 83722 ↡ 31946               |
+ glasnt                             | Shell ✭ 17 ↡ 1                       || Python ✭ 83735 ↡ 31947               |
                                     |                                      ||                                      |
  Enginerd @GoogleCloudPlatform |    |______________________________________||______________________________________|
  @devopsdays | Steering @pyconau |  |                                      ||                                      |
