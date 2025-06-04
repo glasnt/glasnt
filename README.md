@@ -16,17 +16,17 @@
         %SSS?*?##%**%S              | The whys to the wats                 || The Web framework for                |
                                     |                                      || perfectionists with deadlines.       |
  Katie McLaughlin                   |                                      ||                                      |
- glasnt                             | Shell ✭ 17 ↡ 1                       || Python ✭ 83769 ↡ 31964               |
+ glasnt                             | Shell ✭ 17 ↡ 1                       || Python ✭ 83787 ↡ 31969               |
                                     |                                      ||                                      |
  Enginerd @GoogleCloudPlatform |    |______________________________________||______________________________________|
- @devopsdays | Steering @pyconau |  |                                      ||                                      |
- Board @django |   Bot account      | [] glasnt/emojificate                || [] glasnt/gday-cloud-run             |
- @glasnt-bot |   Test account       |                                      ||                                      |
- @glasnt-dev                        | Turn text with emoji into text       || Australian-friendly Hello Cloud      |
-                                    | with accessible emoji                || Run                                  |
- ¤ 632 followers · ✭ 77             |                                      ||                                      |
-                                    | Python ✭ 65 ↡ 8                      || HTML ✭ 1                             |
- https://glasnt.com                 |                                      ||                                      |
+ @devopsdays  |   Bot account       |                                      ||                                      |
+ @glasnt-bot |   Test account       | [] glasnt/emojificate                || [] glasnt/gday-cloud-run             |
+ @glasnt-dev                        |                                      ||                                      |
+                                    | Turn text with emoji into text       || Australian-friendly Hello Cloud      |
+ ¤ 632 followers · ✭ 77             | with accessible emoji                || Run                                  |
+                                    |                                      ||                                      |
+ https://glasnt.com                 | Python ✭ 65 ↡ 8                      || HTML ✭ 1                             |
+                                    |                                      ||                                      |
                                     |______________________________________||______________________________________|
                                     
 ```
