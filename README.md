@@ -7,26 +7,24 @@
  ?:,,,;# %;+#?,,,,?@+:+ #+,,,,,     | A very persuasive package, for       ||                                      |
  *;,,,:# %::;::;;::;::? @;,,::,     | creating embroidery patterns.        ||                                      |
  *;,:,,*@ ;;+::,,::+;;@ ?,,:::,     |                                      ||                                      |
- :::::,,%@S+::::::::;S@#:,::::,     | Python ✭ 115 ↡ 11                    ||                                      |
+ :::::,,%@S+::::::::;S@#:,::::,     | Python ✭ 114 ↡ 13                    ||                                      |
  :,:::,,%##@S;;::;;*@@##?,,::::     |                                      ||                                      |
  ::,:::*###@#?;;;;:+ @##@?;:::;     |______________________________________||______________________________________|
   :::;%@@#%S*;,,,,:+SS##@@?::;      |                                      ||                                      |
-    :+*SS%%?%%*+;*%S%S%S%S*:        | [] glasnt/wat-references             || [] django/django                     |
+    :+*SS%%?%%*+;*%S%S%S%S*:        | [] glasnt/acetate                    || [] glasnt/kakapo.st                  |
      #*?%%%%??%SSS??%%S@ @          |                                      ||                                      |
-        %SSS?*?##%**%S              | The whys to the wats                 || The Web framework for                |
-                                    |                                      || perfectionists with deadlines.       |
+        %SSS?*?##%**%S              | Convert slide PDFs into              ||                                      |
+                                    | accessible HTML pages                ||                                      |
  Katie McLaughlin                   |                                      ||                                      |
- glasnt                             | Shell ✭ 18 ↡ 1                       || Python ✭ 86563 ↡ 32894               |
+ glasnt                             | Python                               || HTML                                 |
                                     |                                      ||                                      |
  Enginerd @GoogleCloudPlatform |    |______________________________________||______________________________________|
- @devopsdays  |   Bot account       |                                      ||                                      |
- @glasnt-bot |   Test account       | [] glasnt/emojificate                || [] glasnt/gday-cloud-run             |
- @glasnt-dev                        |                                      ||                                      |
-                                    | Turn text with emoji into text       || Australian-friendly Hello Cloud      |
- ¤ 654 followers · ✭ 77             | with accessible emoji                || Run                                  |
-                                    |                                      ||                                      |
- https://glasnt.com                 | Python ✭ 64 ↡ 8                      || HTML ✭ 1                             |
-                                    |                                      ||                                      |
-                                    |______________________________________||______________________________________|
+ @devopsdays  |   Bot account                                                                                       
+ @glasnt-bot |   Test account       
+ @glasnt-dev                        
+                                    
+ ¤ 674 followers · ✭ 77             
+                                    
+ https://glasnt.com                 
                                     
 ```
