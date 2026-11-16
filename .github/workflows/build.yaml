@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v7
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v7
       with:
-        python-version: 3.12
-    - uses: actions/cache@v4
+        python-version: 3.15
+    - uses: actions/cache@v6
       name: Configure pip caching
       with:
         path: ~/.cache/pip
