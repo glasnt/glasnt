@@ -18,11 +18,8 @@
  Katie McLaughlin                   |                                      ||                                      |
  glasnt                             | Python                               || HTML                                 |
                                     |                                      ||                                      |
- Enginerd @GoogleCloudPlatform |    |______________________________________||______________________________________|
- @devopsdays  |   Bot account                                                                                       
- @glasnt-bot |   Test account       
- @glasnt-dev                        
-                                    
+                                    |______________________________________||______________________________________|
+                                                                                                                    
  ¤ 674 followers · ✭ 77             
                                     
  https://glasnt.com                 
